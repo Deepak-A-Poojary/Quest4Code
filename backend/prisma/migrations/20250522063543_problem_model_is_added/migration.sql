@@ -15,7 +15,7 @@ CREATE TABLE "Problem" (
     "editorial" TEXT NOT NULL,
     "testCases" JSONB NOT NULL,
     "codeSnippets" JSONB NOT NULL,
-    "referencesSolutions" JSONB NOT NULL,
+    "referenceSolutions" JSONB NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

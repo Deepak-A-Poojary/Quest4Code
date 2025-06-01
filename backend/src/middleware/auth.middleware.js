@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { db } from "../src/libs/db.js";
+import { db } from "../libs/db.js";
 
 export const authMiddleware = async (req, res, next) => {
   try {
@@ -41,6 +41,7 @@ export const authMiddleware = async (req, res, next) => {
     }
 
     req.user = user;
+
     next();
   } catch (error) {
     console.error("Error in auth middleware:", error);
@@ -48,4 +49,30 @@ export const authMiddleware = async (req, res, next) => {
       error: "Internal Server Error",
     });
   }
+};
+
+export const checkAdmin = async (req, res, next) => {
+  try {
+    const userId = req.user.id;
+    const user = await db.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        role: true,
+      },
+    });
+
+    if (!user || user.role !== "ADMIN") {
+      return res.status(403).json({
+        message: "Access denied - Admins only",
+      });
+    }
+  } catch (error) {
+    console.log("error while checking admin", error);
+    res.status(500).json({
+      error: "Error whiling checking admin",
+    });
+  }
+  next();
 };
