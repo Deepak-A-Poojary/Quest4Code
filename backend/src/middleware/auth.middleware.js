@@ -17,7 +17,7 @@ export const authMiddleware = async (req, res, next) => {
       decoded = jwt.verify(token, process.env.JWT_TOKEN);
     } catch (error) {
       return res.status(401).json({
-        message: "Unauthorized - Invalid token",
+        message: "Unauthorized - Invalid token on decoded",
       });
     }
 
@@ -68,11 +68,11 @@ export const checkAdmin = async (req, res, next) => {
         message: "Access denied - Admins only",
       });
     }
+    next();
   } catch (error) {
     console.log("error while checking admin", error);
     res.status(500).json({
       error: "Error whiling checking admin",
     });
   }
-  next();
 };

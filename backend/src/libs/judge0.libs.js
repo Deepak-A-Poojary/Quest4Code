@@ -5,6 +5,7 @@ export const getJudge0LanguageId = (lanugage) => {
     PYTHON: 71,
     JAVA: 62,
     JAVASCRIPT: 63,
+    CPP: 10,
   };
   return lanugageMap[lanugage];
 };
@@ -35,7 +36,6 @@ export const pollBatchResults = async (tokens) => {
 };
 
 export const submitBatch = async (submissions) => {
-  
   const { data } = await axios.post(
     `${process.env.JUDGE0_API_URL}/submissions/batch?base64_encoded=false`,
     {
@@ -46,12 +46,12 @@ export const submitBatch = async (submissions) => {
   return data; // [{token} , {token} , {token}]
 };
 
-
 export const getLanguageName = (lanugage_id) => {
   const lanugageMap = {
     71: "PYTHON",
     62: "JAVA",
     63: "JAVASCRIPT",
+    10: "CPP",
   };
   return lanugageMap[lanugage_id] || "Unknown";
 };

@@ -128,7 +128,7 @@ export const logout = async (req, res) => {
     console.log("error while logging out", error);
 
     res.status(500).json({
-      error: "Error whiling logging out",
+      error: `Error whiling logging out :${error}`,
     });
   }
 };

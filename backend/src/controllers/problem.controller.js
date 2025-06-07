@@ -52,7 +52,6 @@ export const createProblem = async (req, res) => {
 
       for (let i = 0; i < results.length; i++) {
         const result = results[i];
-        // console.log("Result-----", result);
         console.log(
           `Testcase ${
             i + 1
@@ -88,11 +87,11 @@ export const createProblem = async (req, res) => {
 
     return res.status(201).json({
       sucess: true,
-      message: "Message Created Successfully",
+      message: "Problem Created Successfully",
       problem: newProblem,
     });
   } catch (error) {
-    console.log(error);
+    console.log("error while creating problem", error);
     return res.status(500).json({
       error: "Error While Creating Problem",
     });
@@ -101,7 +100,15 @@ export const createProblem = async (req, res) => {
 
 export const getAllProblems = async (req, res) => {
   try {
-    const problems = await db.problem.findMany();
+    const problems = await db.problem.findMany({
+      include: {
+        solvedBy: {
+          where: {
+            userId: req.user.id,
+          },
+        },
+      },
+    });
 
     if (!problems) {
       return res.status(404).json({ error: "No problems found" });
@@ -111,7 +118,7 @@ export const getAllProblems = async (req, res) => {
       .status(200)
       .json({ sucess: true, message: "Fetched all the problems", problems });
   } catch (error) {
-    console.log(error);
+    console.log("error while fetching problems", error);
     return res.status(500).json({ error: "Error While Fetching Problems" });
   }
 };
@@ -134,7 +141,7 @@ export const getProblembyId = async (req, res) => {
       .status(200)
       .json({ sucess: true, message: "Fetched problem", problem });
   } catch (error) {
-    console.log(error);
+    console.log("error while fetching problem by id", error);
     return res.status(500).json({ error: "Error While Fetching Problem" });
   }
 };
@@ -276,7 +283,7 @@ export const updateProblem = async (req, res) => {
       problem: updatedProblem,
     });
   } catch (error) {
-    console.log(error);
+    console.log("error while updating problem", error);
 
     return res.status(500).json({
       error: "Error While Updating Problem",
@@ -321,7 +328,7 @@ export const deleteProblem = async (req, res) => {
       message: "Problem Deleted Successfully",
     });
   } catch (error) {
-    console.log(error);
+    console.log("error while deleting problem", error);
     return res.status(500).json({ error: "Error While Deleting Problem" });
   }
 };

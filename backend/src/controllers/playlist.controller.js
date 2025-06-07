@@ -12,7 +12,7 @@ export const createPlaylist = async (req, res) => {
       },
     });
 
-    console.log(availablePlaylists);
+    console.log("availablePlaylists", availablePlaylists);
 
     let ifAlreadyAvailable = false;
 
@@ -39,7 +39,7 @@ export const createPlaylist = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    console.log("failed to create playlist", error);
     return res.status(500).json({ error: "Error While Creating Playlist" });
   }
 };
@@ -179,7 +179,6 @@ export const deletePlaylist = async (req, res) => {
   const playlistId = req.params.id;
   const userId = req.user.id;
 
-  console.log(userId);
   try {
     // ✅ Step 1: Check if playlist exists
     const playlist = await db.playlist.findUnique({

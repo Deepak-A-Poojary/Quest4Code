@@ -35,7 +35,7 @@ problemRoutes.delete(
 );
 
 problemRoutes.get(
-  "/get-solved-problems",
+  "/get-solved-problem",
   authMiddleware,
   getAllSolvedProblemsByUser
 );

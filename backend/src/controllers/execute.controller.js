@@ -35,8 +35,6 @@ export const executeCode = async (req, res) => {
     // Poll for the results
     const results = await pollBatchResults(sumbitResponse.map((r) => r.token));
 
-    console.log("results-------------", results);
-
     // Check if the results match the expected outputs
     let allPassed = true;
 
@@ -59,8 +57,6 @@ export const executeCode = async (req, res) => {
         time: result.time ? `${result.time.toString()} s` : undefined,
       };
     });
-
-    console.log("userId -----------------", userId);
 
     // update submission
     const submission = await db.submission.create({
@@ -138,7 +134,7 @@ export const executeCode = async (req, res) => {
       submission: submissionWithTestCaseResults,
     });
   } catch (error) {
-    console.log(error);
+    console.log("Error while executing code", error);
     return res.status(500).json({ error: "Error while executing code" });
   }
 };

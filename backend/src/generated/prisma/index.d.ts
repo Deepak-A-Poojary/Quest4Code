@@ -3001,7 +3001,7 @@ export namespace Prisma {
     examples: JsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial: string | null
     testCases: JsonValue
     codeSnippets: JsonValue
     referenceSolutions: JsonValue
@@ -3138,7 +3138,7 @@ export namespace Prisma {
       examples: Prisma.JsonValue
       constraints: string
       hints: string
-      editorial: string
+      editorial: string | null
       testCases: Prisma.JsonValue
       codeSnippets: Prisma.JsonValue
       referenceSolutions: Prisma.JsonValue
@@ -10091,7 +10091,7 @@ export namespace Prisma {
     examples?: JsonFilter<"Problem">
     constraints?: StringFilter<"Problem"> | string
     hints?: StringFilter<"Problem"> | string
-    editorial?: StringFilter<"Problem"> | string
+    editorial?: StringNullableFilter<"Problem"> | string | null
     testCases?: JsonFilter<"Problem">
     codeSnippets?: JsonFilter<"Problem">
     referenceSolutions?: JsonFilter<"Problem">
@@ -10113,7 +10113,7 @@ export namespace Prisma {
     examples?: SortOrder
     constraints?: SortOrder
     hints?: SortOrder
-    editorial?: SortOrder
+    editorial?: SortOrderInput | SortOrder
     testCases?: SortOrder
     codeSnippets?: SortOrder
     referenceSolutions?: SortOrder
@@ -10138,7 +10138,7 @@ export namespace Prisma {
     examples?: JsonFilter<"Problem">
     constraints?: StringFilter<"Problem"> | string
     hints?: StringFilter<"Problem"> | string
-    editorial?: StringFilter<"Problem"> | string
+    editorial?: StringNullableFilter<"Problem"> | string | null
     testCases?: JsonFilter<"Problem">
     codeSnippets?: JsonFilter<"Problem">
     referenceSolutions?: JsonFilter<"Problem">
@@ -10160,7 +10160,7 @@ export namespace Prisma {
     examples?: SortOrder
     constraints?: SortOrder
     hints?: SortOrder
-    editorial?: SortOrder
+    editorial?: SortOrderInput | SortOrder
     testCases?: SortOrder
     codeSnippets?: SortOrder
     referenceSolutions?: SortOrder
@@ -10184,7 +10184,7 @@ export namespace Prisma {
     examples?: JsonWithAggregatesFilter<"Problem">
     constraints?: StringWithAggregatesFilter<"Problem"> | string
     hints?: StringWithAggregatesFilter<"Problem"> | string
-    editorial?: StringWithAggregatesFilter<"Problem"> | string
+    editorial?: StringNullableWithAggregatesFilter<"Problem"> | string | null
     testCases?: JsonWithAggregatesFilter<"Problem">
     codeSnippets?: JsonWithAggregatesFilter<"Problem">
     referenceSolutions?: JsonWithAggregatesFilter<"Problem">
@@ -10679,7 +10679,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -10701,7 +10701,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -10721,7 +10721,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -10743,7 +10743,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -10764,7 +10764,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -10781,7 +10781,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -10799,7 +10799,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -12590,7 +12590,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -12610,7 +12610,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -12756,7 +12756,7 @@ export namespace Prisma {
     examples?: JsonFilter<"Problem">
     constraints?: StringFilter<"Problem"> | string
     hints?: StringFilter<"Problem"> | string
-    editorial?: StringFilter<"Problem"> | string
+    editorial?: StringNullableFilter<"Problem"> | string | null
     testCases?: JsonFilter<"Problem">
     codeSnippets?: JsonFilter<"Problem">
     referenceSolutions?: JsonFilter<"Problem">
@@ -13120,7 +13120,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -13141,7 +13141,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -13255,7 +13255,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13276,7 +13276,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13447,7 +13447,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -13468,7 +13468,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -13542,7 +13542,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13563,7 +13563,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13717,7 +13717,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -13738,7 +13738,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -13802,7 +13802,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13823,7 +13823,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13842,7 +13842,7 @@ export namespace Prisma {
     examples: JsonNullValueInput | InputJsonValue
     constraints: string
     hints: string
-    editorial: string
+    editorial?: string | null
     testCases: JsonNullValueInput | InputJsonValue
     codeSnippets: JsonNullValueInput | InputJsonValue
     referenceSolutions: JsonNullValueInput | InputJsonValue
@@ -13890,7 +13890,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13910,7 +13910,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue
@@ -13930,7 +13930,7 @@ export namespace Prisma {
     examples?: JsonNullValueInput | InputJsonValue
     constraints?: StringFieldUpdateOperationsInput | string
     hints?: StringFieldUpdateOperationsInput | string
-    editorial?: StringFieldUpdateOperationsInput | string
+    editorial?: NullableStringFieldUpdateOperationsInput | string | null
     testCases?: JsonNullValueInput | InputJsonValue
     codeSnippets?: JsonNullValueInput | InputJsonValue
     referenceSolutions?: JsonNullValueInput | InputJsonValue

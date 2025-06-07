@@ -3,9 +3,6 @@ import { db } from "../libs/db.js";
 export const getAllSubmissions = async (req, res) => {
   try {
     const userId = req.user.id;
-
-    console.log(userId);
-
     const submissions = await db.submission.findMany({
       where: {
         userId: userId,
@@ -18,7 +15,7 @@ export const getAllSubmissions = async (req, res) => {
       submissions,
     });
   } catch (error) {
-    console.log(error);
+    console.log("error while fetching submissions", error);
     res.status(500).json({ error: "Error While Fetching Submissions" });
   }
 };
@@ -26,7 +23,9 @@ export const getAllSubmissions = async (req, res) => {
 export const getSubmissionsForProblem = async (req, res) => {
   try {
     const userId = req.user.id;
-    const problemId = req.params.id;
+    const { problemId } = req.params;
+
+    console.log(problemId);
 
     const submissions = await db.submission.findMany({
       where: {
@@ -37,11 +36,11 @@ export const getSubmissionsForProblem = async (req, res) => {
 
     res.status(200).json({
       sucess: true,
-      message: "Fetched all the submissions",
+      message: `Fetched all the submission by id:${problemId}`,
       submissions,
     });
   } catch (error) {
-    console.log(error);
+    console.log("error while fetching submissions", error);
     res.status(500).json({ error: "Error While Fetching Submissions" });
   }
 };
@@ -62,7 +61,7 @@ export const getAllTheSubmissionsCount = async (req, res) => {
       submissionsCount,
     });
   } catch (error) {
-    console.log(error);
+    console.log("error while fetching submissions count", error);
     res.status(500).json({ error: "Error While Fetching Submissions" });
   }
 };
