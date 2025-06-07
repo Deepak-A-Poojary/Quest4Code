@@ -49,7 +49,7 @@ const ProblemPage = () => {
     getProblemById(id);
     getSubmissionForProblem(id);
     getSubmissionCountForProblem(id);
-  }, [id]);
+  }, [id, submission]);
 
   useEffect(() => {
     if (problem) {
