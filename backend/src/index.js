@@ -15,7 +15,7 @@ const app = express();
 
 const port = process.env.PORT || 6000;
 
-const allowedOrigins = ["http://localhost:5173", "http://192.168.31.206:5173"];
+const allowedOrigins = ["http://localhost:5173", "http://192.168.31.206:5173", "https://quest4code.onrender.com"];
 
 app.use(express.json());
 app.use(cookieParser());
